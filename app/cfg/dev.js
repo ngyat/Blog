@@ -2,7 +2,6 @@
 
 let path = require('path');
 let webpack = require('webpack');
-
 let baseConfig = require('./base');
 let defaultSettings = require('./defaults');
 
@@ -10,21 +9,19 @@ let defaultSettings = require('./defaults');
 let BowerWebpackPlugin = require('bower-webpack-plugin');
 
 let config = Object.assign({}, baseConfig, {
-  entry: path.join(__dirname, '../src/index'),
-  cache: false,
-  devtool: 'sourcemap',
+  entry: [
+    'webpack-dev-server/client?http://127.0.0.1:' + defaultSettings.port,
+    'webpack/hot/only-dev-server',
+    './src/index'
+  ],
+  cache: true,
+  devtool: 'eval-source-map',
   plugins: [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"production"'
-    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
     new BowerWebpackPlugin({
       searchResolveModulesDirectories: false
-    }),
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.AggressiveMergingPlugin(),
-    new webpack.NoErrorsPlugin()
+    })
   ],
   module: defaultSettings.getDefaultModules()
 });
@@ -32,14 +29,14 @@ let config = Object.assign({}, baseConfig, {
 // Add needed loaders to the defaults here
 config.module.loaders.push({
   test: /\.(js|jsx)$/,
-  loader: 'babel',
+  loader: 'react-hot!babel-loader',
   include: [].concat(
     config.additionalPaths,
     [path.join(__dirname, '/../src')]
   )
 }, {
-    test: /\.tsx?$/,
-    loader: "ts-loader"
+    test: /\.html$/,
+    loader: "raw-loader" // loaders: ['raw-loader'] is also perfectly acceptable.
   });
 
 module.exports = config;

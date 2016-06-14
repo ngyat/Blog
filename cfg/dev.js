@@ -37,6 +37,9 @@ config.module.loaders.push({
 }, {
     test: /\.html$/,
     loader: "raw-loader" // loaders: ['raw-loader'] is also perfectly acceptable.
+  },{
+    test: /\.tsx?$/, 
+    loader: "ts-loader"
   });
 
 module.exports = config;
