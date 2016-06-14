@@ -1,7 +1,0 @@
-{
-  "generator-react-webpack": {
-    "appName": "blog",
-    "style": "scss",
-    "postcss": true
-  }
-}
