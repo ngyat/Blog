@@ -2,13 +2,13 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './stores';
-import App from './containers/App';
+import Saber from './containers/App';
 
 const store = configureStore();
 
 render(
   <Provider store={store}>
-    <App />
+    <Saber />
   </Provider>,
-  document.getElementById('app')
+  document.getElementById('content')
 );

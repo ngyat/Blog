@@ -10,7 +10,7 @@ import React, {
 } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Main from '../components/Main';
+import Main from '../components/Inner';
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
   render() {
