@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import Box from './BoxItem';
 require('../assets/css/main.css');
 
+/**
+ * 首页文章列表（包含子分页按钮及子模块）
+ */
+
 
 //获取模拟数据的json
 var innerDatas = require('../data/Page.json');
@@ -56,7 +60,10 @@ class SiderberComponent extends Component {
     });
     return (
       <div className="inner">
+      {/**文章列表 */}
         {inners}
+
+
         {/**分页选项 以后需要封装成插件 */}
         <div className="pagination">
          { /**<a href="#" class="button previous">Previous Page</a>*/}

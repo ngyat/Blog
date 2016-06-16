@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 
-require('../assets/css/main.css');
-
+// require('../assets/css/main.css');
+/**
+ * 首页文章item
+ */
 
 class BoxItemComponent extends Component {
     render() {
