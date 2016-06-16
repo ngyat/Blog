@@ -23,15 +23,15 @@ innerDatas = (function FormatTheData(innerDatas) {
     'Dec'
   ];
   //遍历json 数据
-  for (var i = 0; i < innerDatas.length; i++) {
-    var singleData = innerDatas[i];
+  for (var i = 0; i < innerDatas.articles.length; i++) {
+    var singleData = innerDatas.articles[i];
     //将时间戳转换成时间 并取值
     var time = new Date(parseInt(singleData.data) * 1000);
 
     singleData.Month = Months[time.getMonth() - 1];
     singleData.Year = time.getFullYear();
     singleData.Day = time.getDay();
-    innerDatas[i] = singleData;
+    innerDatas.articles[i] = singleData;
 
   }
   return innerDatas;
@@ -51,7 +51,7 @@ class SiderberComponent extends Component {
 
     var inners = [];
     //将所有的插件集合起来
-    innerDatas.forEach(function(value){
+    innerDatas.articles.forEach(function(value){
       inners.push(<Box data={value}/>);
     });
     return (
