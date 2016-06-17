@@ -54,10 +54,10 @@ class SiderberComponent extends Component {
   render() {
 
     var inners = [];
-    //将所有的插件集合起来
+    // 
     innerDatas.articles.forEach(function(value){
       inners.push(<Box data={value}/>);
-    });
+    }).bind(this);
     return (
       <div className="inner">
       {/**文章列表 */}
