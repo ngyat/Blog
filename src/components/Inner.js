@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Box from './BoxItem';
+import Pagination from './Pagination';
 require('../assets/css/main.css');
 
 /**
@@ -43,7 +44,7 @@ innerDatas = (function FormatTheData(innerDatas) {
 
 class SiderberComponent extends Component {
 
-  
+
   //初始化state
   constructor(props) {
     super(props);
@@ -54,34 +55,24 @@ class SiderberComponent extends Component {
   render() {
 
     var inners = [];
-    // 
-    innerDatas.articles.forEach(function(value){
+
+    innerDatas.articles.forEach(function (value) {
       inners.push(<Box data={value}/>);
-    }).bind(this);
+    });
     return (
       <div className="inner">
-      {/**文章列表 */}
+        {/**文章列表 */}
         {inners}
 
-
         {/**分页选项 以后需要封装成插件 */}
-        <div className="pagination">
-         { /**<a href="#" class="button previous">Previous Page</a>*/}
-          <div className="pages">
-            <a href="#" className="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <span>&hellip;</span>
-            <a href="#">20</a>
-          </div>
-          <a href="#" className="button next">Next Page</a>
-        </div>
+        <Pagination ListCount={innerDatas.ListCount}/>
       </div>
-      )}}
+    )
+  }
+}
 
 
-      SiderberComponent.defaultProps = {
-      };
+SiderberComponent.defaultProps = {
+};
 
-      export default SiderberComponent;
+export default SiderberComponent;
