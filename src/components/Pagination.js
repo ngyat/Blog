@@ -15,6 +15,9 @@ class PaginationComponent extends Component {
             ListCount: 0
         };
     }
+
+
+
     // 生成分页按钮(总页数)
     // 添加 react 路由
     setPageButton(pageCount) {
@@ -30,7 +33,7 @@ class PaginationComponent extends Component {
                 page.push(<a href="#">{index - 1}</a>);
             }
 
-            page.push(<a href="#" className="active">{index}</a>);
+            page.push(<a href="#"  className="active">{index}</a>);
 
             //生成后两页按钮
             let temp = pageCount - index;
@@ -50,7 +53,7 @@ class PaginationComponent extends Component {
             }
         }
 
-     	<a href="#" className="button next">下一页</a>
+        <a href="#" className="button next">下一页</a>
         return page;
     }
     render() {
