@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
-
+/**
+ * 左边导航栏
+ */
 class componentName extends Component {
     render() {
         return (
-            <div>
+            <div id="sidebar">
                 
             </div>
         );

@@ -21,7 +21,7 @@
   },
   "repository": "",
   "keywords": [],
-  "author": "Your name here",
+  "author": "ngyat",
   "devDependencies": {
     "autoprefixer-loader":"^3.2.0",
     "babel-core": "^6.0.0",
