@@ -24,3 +24,21 @@
 // };
 //
 // export default AppComponent;
+
+import React, {Component} from 'react';
+import Inner from './Inner'
+import Sidebar from './Sidebar'
+class HomeComponent extends Component {
+    render() {
+        return (
+            <div>
+                {/**文章列表 */}
+                <Inner/>
+                {/**导航栏 */}
+                <Sidebar/>
+            </div>
+        );
+    }
+}
+
+export default HomeComponent;

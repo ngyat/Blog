@@ -10,5 +10,5 @@ render(
   <Provider store={store}>
     <Saber />
   </Provider>,
-  document.getElementById('content')
+  document.getElementById('app')
 );

@@ -28,32 +28,30 @@ class PaginationComponent extends Component {
             //生成前两页按钮
             if (index > 1) {
                 if (index > 2) {
-                    page.push(<a href="#" >{index - 2}</a>);
+                    page.push(<a href="#" key={index - 2}>{index - 2}</a>);
                 }
-                page.push(<a href="#">{index - 1}</a>);
+                page.push(<a href="#" key={index - 1}>{index - 1}</a>);
             }
 
-            page.push(<a href="#"  className="active">{index}</a>);
+            page.push(<a href="#"  className="active" key={index}>{index}</a>);
 
             //生成后两页按钮
             let temp = pageCount - index;
             if (temp > 0) {
                 if (temp > 0) {
-                    page.push(<a href="#">{index + 1}</a>);
+                    page.push(<a href="#" key={index + 1}>{index + 1}</a>);
                     if (temp >= 2) {
-                        page.push(<a href="#">{index + 2}</a>);
+                        page.push(<a href="#" key={index + 2}>{index + 2}</a>);
                         if (temp >= 4) {
-                            page.push(<span>&hellip; </span>)
+                            page.push(<span key='hellip'>&hellip; </span>)
                         }
                         if (temp >= 3) {
-                            page.push(<a href="#">{pageCount}</a>)
+                            page.push(<a href="#" key={pageCount}>{pageCount}</a>)
                         }
                     }
                 }
             }
         }
-
-        <a href="#" className="button next">下一页</a>
         return page;
     }
     render() {

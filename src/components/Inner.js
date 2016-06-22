@@ -57,15 +57,17 @@ class SiderberComponent extends Component {
     var inners = [];
 
     innerDatas.articles.forEach(function (value) {
-      inners.push(<Box data={value}/>);
+      inners.push(<Box data={value} key={value.objID}/>);
     });
     return (
+      <div id="content">
       <div className="inner">
         {/**文章列表 */}
         {inners}
 
         {/**分页选项 以后需要封装成插件 */}
         <Pagination ListCount={innerDatas.ListCount}/>
+      </div>
       </div>
     )
   }
