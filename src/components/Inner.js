@@ -53,9 +53,7 @@ class SiderberComponent extends Component {
     };
   }
   render() {
-
     var inners = [];
-
     innerDatas.articles.forEach(function (value) {
       inners.push(<Box data={value} key={value.objID}/>);
     });

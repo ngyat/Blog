@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 /**
  * 左边导航栏
  */
@@ -62,7 +63,9 @@ class SidebarComponent extends Component {
                 {/**日历控件 */}
                 <section className="box calendar">
                     <div className="inner">
-                      {/**  <table>
+
+
+                            {/**  <table>
                             <caption>July 2014</caption>
                             <thead>
                                 <tr>
@@ -121,14 +124,14 @@ class SidebarComponent extends Component {
                     </div>
                 </section>
 
-                {/**copyright */}
-                <ul id="copyright">
-                    <li>&copy; Untitled.</li>
-                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                </ul>
+                    {/**copyright */}
+                    <ul id="copyright">
+                        <li>&copy; Untitled.</li>
+                        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                    </ul>
             </div>
-        );
-    }
-}
+                );
+                }
+                }
 
-export default SidebarComponent;
+                export default SidebarComponent;
