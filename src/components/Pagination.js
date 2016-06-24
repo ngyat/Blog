@@ -30,6 +30,7 @@ class PaginationComponent extends Component {
         let index = this.state.pageIndex;
 
         if (pageCount > 0) {
+            //添加第一页
             if(index>=4)
             {
                 page.push(<a href="#" onClick={this.pageBtnClick.bind(this,1)} key={1}>1</a>)
