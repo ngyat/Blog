@@ -23,6 +23,7 @@ class CalendarComponent extends Component {
     const tableHtml = [];
     var dateCells =[];
     let weeks=0;
+
     createDateObjects(date, weekOffset).map((day, i) =>{
       dateCells.push(<td key={`day-${i}`}><span>{renderDay(day.day)}</span></td>);
       if(day.day.weekday()==6)
