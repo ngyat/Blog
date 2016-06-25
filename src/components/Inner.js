@@ -42,7 +42,7 @@ innerDatas = (function FormatTheData(innerDatas) {
   return innerDatas;
 })(innerDatas);
 
-class SiderberComponent extends Component {
+class InnerComponent extends Component {
 
 
   //初始化state
@@ -72,7 +72,7 @@ class SiderberComponent extends Component {
 }
 
 
-SiderberComponent.defaultProps = {
+InnerComponent.defaultProps = {
 };
 
-export default SiderberComponent;
+export default InnerComponent;

@@ -39,7 +39,7 @@ config.module.loaders.push({
   )
 }, {
     test: /\.tsx?$/,
-    loader: "ts-loader"
+    loader: 'ts-loader'
   });
 
 module.exports = config;

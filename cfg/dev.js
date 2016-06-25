@@ -29,17 +29,17 @@ let config = Object.assign({}, baseConfig, {
 // Add needed loaders to the defaults here
 config.module.loaders.push({
   test: /\.(js|jsx)$/,
-  loader: 'react-hot!babel-loader',
+  loader: 'react-hot!babel-loader!eslint-loader',
   include: [].concat(
     config.additionalPaths,
     [path.join(__dirname, '/../src')]
   )
 }, {
     test: /\.html$/,
-    loader: "raw-loader" // loaders: ['raw-loader'] is also perfectly acceptable.
+    loader: 'raw-loader'// loaders: ['raw-loader'] is also perfectly acceptable.
   },{
-    test: /\.tsx?$/, 
-    loader: "ts-loader"
+    test: /\.tsx?$/,
+    loader: 'ts-loader'
   });
 
 module.exports = config;
