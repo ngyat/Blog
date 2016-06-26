@@ -74,7 +74,7 @@ class PaginationComponent extends Component {
         return (
             <div className="pagination">
                 {/**是否添加 上/下 一页 */}
-                { this.state.pageIndex > 1 ? <a href="#" onClick={this.pageBtnClick.bind(this, this.state.pageIndex - 1) } className="button previous">上一页</a> : null}
+                { this.state.pageIndex > 1 ? <a role="button" onClick={this.pageBtnClick.bind(this, this.state.pageIndex - 1) } className="button previous">上一页</a> : null}
                 <div className="pages">
                     { this.setPageButton(pageCount) }
                 </div>

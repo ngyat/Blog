@@ -36,6 +36,8 @@ class HomeComponent extends Component {
                 <Inner/>
                 {/**导航栏 */}
                 <Sidebar/>
+
+
             </div>
         );
     }

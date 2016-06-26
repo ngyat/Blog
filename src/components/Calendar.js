@@ -2,7 +2,9 @@ import React, {Component, PropTypes } from 'react';
 import createDateObjects from '../extends/createDateObjects'
 
 class CalendarComponent extends Component {
-
+  constructor(props) {
+    super(props);
+  }
   static propTypes = {
     weekOffset: PropTypes.number.isRequired,
     date: PropTypes.object.isRequired,
@@ -16,19 +18,12 @@ class CalendarComponent extends Component {
     weekOffset: 0,
     renderDay: day => day.format('YYYY-MM-D')
   }
-  //
-  _test() {
-    debugger;
-    console.log('test');
-  }
-
 
   render() {
     const { date, weekOffset, renderDay, onNextMonth, onPrevMonth, onPickDate } = this.props;
     const tableHtml = [];
     var dateCells = [];
     let weeks = 0;
-
     createDateObjects(date, weekOffset).map((day, i) => {
       if (day.classNames == 'prevMonth' || day.classNames == 'nextMonth') {
         dateCells.push(<td key={`day-${i}`} className={day.classNames}>
@@ -37,7 +32,7 @@ class CalendarComponent extends Component {
 
       } else {
         dateCells.push(<td key={`day-${i}`} className={day.classNames}>
-          <a href="#" onClick={() => onPickDate(day.day) }>{renderDay(day.day) }</a>
+          <a role="button" onClick={ ()=>onPickDate(day.day)}>{renderDay(day.day) }</a>
         </td>);
       }
       if (day.day.weekday() == 6) {
@@ -48,30 +43,27 @@ class CalendarComponent extends Component {
     });
 
     return (
-      <div>
-        <button  onClick={this._test.bind(this) }>xxxxxxxxxxxx</button >
-        <table>
-          <caption >
-            <div  href="#" role='button' style={{ float: 'left', padding: '0px 0px 0px 15px' }} onClick={onPrevMonth}>‹</div>
-            {date.format('MMM YYYY') }
-            <a  role="button" style={{ float: 'right', padding: '0px 15px 0px 0px' }} onClick={onNextMonth}> ›</a>
-          </caption>
-          <thead>
-            <tr>
-              <th scope="col" title="Monday">M</th>
-              <th scope="col" title="Tuesday">T</th>
-              <th scope="col" title="Wednesday">W</th>
-              <th scope="col" title="Thursday">T</th>
-              <th scope="col" title="Friday">F</th>
-              <th scope="col" title="Saturday">S</th>
-              <th scope="col" title="Sunday">S</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tableHtml}
-          </tbody>
-        </table>
-      </div>
+      <table>
+        <caption >
+          <a role='button' style={{ float: 'left', padding: '0px 0px 0px 15px',width:'50px' }} onClick={onPrevMonth}>‹</a>
+          {date.format('MMM YYYY') }
+          <a  role="button" style={{ float: 'right', padding: '0px 15px 0px 0px',width:'50px'  }} onClick={onNextMonth}> ›</a>
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col" title="Monday">M</th>
+            <th scope="col" title="Tuesday">T</th>
+            <th scope="col" title="Wednesday">W</th>
+            <th scope="col" title="Thursday">T</th>
+            <th scope="col" title="Friday">F</th>
+            <th scope="col" title="Saturday">S</th>
+            <th scope="col" title="Sunday">S</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tableHtml}
+        </tbody>
+      </table>
     );
   }
 }
