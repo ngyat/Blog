@@ -27,7 +27,7 @@
     // "no-unused-vars": [1, {"vars": "all", "args": "none"}],
     // "react/jsx-uses-react": 1,
     "react/prop-types": 0,
-    // "no-console": 0,
+    "no-console": 0,
 
 
     "comma-dangle": 1,
@@ -36,7 +36,7 @@
     "global-strict": 0,
     "no-extra-semi": 1,
     "no-underscore-dangle": 0,
-    "no-console": 1,
+    // "no-console": 1,
     "no-unused-vars": 1,
     "no-trailing-spaces": [1, { "skipBlankLines": true }],
     "no-unreachable": 1,
