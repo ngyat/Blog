@@ -6,7 +6,19 @@
  *          This modifications only run once when the generator is invoked - if
  *          you edit them, they are not updated again.
  */
-import { combineReducers } from 'redux';
+import {
+  combineReducers
+} from 'redux';
 /* Populated by react-webpack-redux:reducer */
-const reducers = {};
+import todos from './todos';
+import visibilityFilter from './visibilityFilter';
+
+
+const reducers = {
+  todos,
+  visibilityFilter
+};
+
+
+// redux.combineReducers 方法将其他 reducer 结合起来，每个数据 key 都需要实现一个对应的 reducer
 module.exports = combineReducers(reducers);
