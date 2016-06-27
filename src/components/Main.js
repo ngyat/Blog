@@ -35,7 +35,7 @@ class HomeComponent extends Component {
                 {/**文章列表 */}
                 <Inner/>
                 {/**导航栏 */}
-                <Sidebar/>
+                <Sidebar index={0}/>
 
 
             </div>

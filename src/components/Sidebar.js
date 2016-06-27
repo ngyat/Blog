@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes } from 'react';
 import Calendar  from './Calendar';
 import moment from 'moment';
 
@@ -6,17 +6,27 @@ import moment from 'moment';
  * 左边导航栏
  */
 class SidebarComponent extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
             date: moment(),
             Index: 0
         };
+         this.navs=[{ Name: '最近文章', Path: '' }, { Name: '文章列表', Path: '' }, { Name: '关于我的', Path: '' }, { Name: '联系方式', Path: '' }];
+
 
     }
-    render() {
-        let navs=[{ Name: 'Latest Post', Path: '' }, { Name: 'Archives', Path: '' }, { Name: 'About Me', Path: '' }, { Name: 'Contact Me', Path: '' }];
 
+    static PropTypes={
+        index:PropTypes.number.isRequired
+    }
+    static defaultProps={
+        index:1
+    }
+
+    render() {
+        this.state.Index=this.props.index;
         return (
             <div id="sidebars">
                 <h1 id="logo"><a href="#">NgYat</a></h1>
@@ -25,31 +35,30 @@ class SidebarComponent extends Component {
                 <nav id="nav">
                     <ul>
                     {
-                        navs.map((nav,i)=>{
-                    <li><a href="#">{nav.Name}</a></li>
-                    })
+                        this.navs.map((d,i)=>{
+                           return <li key={`nav${i}`} className={i==this.state.Index?'current':''}><a href="#">{d.Name}</a></li>
+                        })
                     }
-
                     </ul>
                 </nav>
 
                 <section className="box search">
                     <form method="post" action="#">
-                        <input type="text" className="text" name="search" placeholder="Search" />
+                        <input type="text" className="text" name="search" placeholder="搜索" />
                     </form>
                 </section>
 
                 <section className="box text-style1">
                     <div className="inner">
                         <p>
-                            <strong>Striped: </strong> A free and fully responsive HTML5 site template designed by <a href="http://n33.co/">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a>
+                            <strong>公告: </strong> A free and fully responsive HTML5 site template designed by <a href="http://n33.co/">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a>
                         </p>
                     </div>
                 </section>
 
                 <section className="box recent-posts">
                     <header>
-                        <h2>Recent Posts</h2>
+                        <h2>最近文章</h2>
                     </header>
                     <ul>
                         <li><a href="#">Lorem ipsum dolor</a></li>
@@ -62,7 +71,7 @@ class SidebarComponent extends Component {
 
                 <section className="box recent-comments">
                     <header>
-                        <h2>Recent Comments</h2>
+                        <h2>最新回复</h2>
                     </header>
                     <ul>
                         <li>case on <a href="#">Lorem ipsum dolor</a></li>
