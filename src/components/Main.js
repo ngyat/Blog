@@ -28,6 +28,7 @@
 import React, {Component} from 'react';
 import Inner from './Inner'
 import Sidebar from './Sidebar'
+import Test from './App'
 class HomeComponent extends Component {
     render() {
         return (
@@ -36,8 +37,7 @@ class HomeComponent extends Component {
                 <Inner/>
                 {/**导航栏 */}
                 <Sidebar index={0}/>
-
-
+                <Test/>
             </div>
         );
     }

@@ -23,7 +23,7 @@ export const setVisibilityFilter = (filter) => {
 }
 
 
-//切换操作
+//删除操作
 export const toggleTodo=(id)=>{
   return{
     type: 'TOGGLE_TODO',
