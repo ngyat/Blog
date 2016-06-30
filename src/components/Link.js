@@ -5,13 +5,17 @@ const Link = ({ active, children, onClick }) => {
     return <span>{children}</span>
   }
 
+  function filterClick(e) {
+    e.preventDefault();
+    onClick();
+  }
+
   return (
     <a href="#"
-       onClick={e => {
-         e.preventDefault()
-         onClick()
-       }}
-    >
+      onClick={e => {
+        filterClick(e);
+      } }
+      >
       {children}
     </a>
   )
