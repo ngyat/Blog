@@ -17,7 +17,9 @@ class PaginationComponent extends Component {
     }
 
     //分页按钮点击事件
-    pageBtnClick(index) {
+    pageBtnClick(index,event) {
+        debugger;
+        event.preventDefault();
         // console.log(index);
         this.setState({ pageIndex: index });
         //api 请求

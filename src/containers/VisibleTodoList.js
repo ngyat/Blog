@@ -3,6 +3,7 @@ import { toggleTodo } from '../actions/const'
 import TodoList from '../components/TodoList'
 
 const getVisibleTodos = (todos, filter) => {
+  debugger;
   switch (filter) {
     case 'SHOW_ALL':
       return todos
@@ -35,8 +36,8 @@ const mapDispatchToProps = (dispatch) => {
 
 //mergeProps(stateProps, dispatchProps, ownProps): props] (Function)
 //mapStateToProps() 与 mapDispatchToProps() 的执行结果和组件自身的 props 将传入到这个回调函数中
-const mergeProps = (stateProps, dispatchProps, ownProps) => {
-}
+// const mergeProps = (stateProps, dispatchProps, ownProps) => {
+// }
 
 const VisibleTodoList = connect(
   mapStateToProps,
