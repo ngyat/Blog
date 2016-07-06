@@ -6,6 +6,9 @@ import {
 } from 'lodash';
 
 
+/**
+ * 生成日历数组
+ */
 export default function createDateObject(date, weekOffset = 0) {
   //定位到当月一号0点0分
   const startOfMonth = date.startOf('month');

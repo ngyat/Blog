@@ -1,4 +1,5 @@
 const todo = (state, action) => {
+  debugger;
   switch (action.type) {
     case 'ADD_TODO':
       return {
@@ -23,6 +24,7 @@ const todo = (state, action) => {
 
 
 const todos = (state = [], action) => {
+  debugger;
   switch (action.type) {
     case 'ADD_TODO':
       return [

@@ -6,7 +6,8 @@
 let nextTodoId = 0;
 
 //添加操作
-export const addTodo = (text) => {
+export const addTodo = (text) => {  debugger;
+
   return {
     type: 'ADD_TODO',
     id: nextTodoId++,
@@ -15,7 +16,8 @@ export const addTodo = (text) => {
 }
 
 //查询操作
-export const setVisibilityFilter = (filter) => {
+export const setVisibilityFilter = (filter) => {  debugger;
+
   return {
     type: 'SET_VISIBILITY_FILTER',
     filter
@@ -24,7 +26,8 @@ export const setVisibilityFilter = (filter) => {
 
 
  //删除操作
-export const toggleTodo = (id) => {
+export const toggleTodo = (id) => {  debugger;
+
   return {
     type: 'TOGGLE_TODO',
     id
